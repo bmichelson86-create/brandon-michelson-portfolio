@@ -37,6 +37,9 @@
     <!-- Preload RDR2 poster image for instant display -->
     <link rel="preload" href="images/RRD2-Still.png" as="image" type="image/png">
 
+    <!-- Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
 
@@ -59,6 +62,21 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="bm-preloader">
+        <div id="blinds-container"></div>
+        <div class="loader-content">
+            <div class="lottie-container" id="lottieLogo"></div>
+            <div class="loader-bottom-data">
+                <div class="loader-percentage" id="loaderPercentage">0%</div>
+                <div class="progress-line-container">
+                    <div class="progress-line" id="progressLine"></div>
+                </div>
+                <div class="scramble-text" id="scrambleText">SYSTEM_INITIALIZATION</div>
+            </div>
+        </div>
+    </div>
+
     <!-- Skip to Content (Accessibility) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -75,8 +93,8 @@
             <a href="#hero" class="sm-logo" aria-label="Home">
                 <span class="sm-logo-text">BM</span>
             </a>
-            <button class="sm-toggle" id="menuToggle" type="button"
-                aria-label="Open menu" aria-expanded="false" aria-controls="staggered-menu-panel">
+            <button class="sm-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="staggered-menu-panel">
                 <span class="sm-toggle-textWrap" aria-hidden="true">
                     <span class="sm-toggle-textInner" id="toggleTextInner">
                         <span class="sm-toggle-line">Menu</span>
@@ -133,10 +151,12 @@
                             <a href="mailto:bmichelson56@gmail.com" class="sm-socials-link">Email</a>
                         </li>
                         <li class="sm-socials-item">
-                            <a href="https://linkedin.com/in/brandon-michelson" target="_blank" rel="noopener noreferrer" class="sm-socials-link">LinkedIn</a>
+                            <a href="https://linkedin.com/in/brandon-michelson" target="_blank"
+                                rel="noopener noreferrer" class="sm-socials-link">LinkedIn</a>
                         </li>
                         <li class="sm-socials-item">
-                            <a href="https://github.com/brandonmichelson" target="_blank" rel="noopener noreferrer" class="sm-socials-link">GitHub</a>
+                            <a href="https://github.com/brandonmichelson" target="_blank" rel="noopener noreferrer"
+                                class="sm-socials-link">GitHub</a>
                         </li>
                     </ul>
                 </div>
@@ -220,7 +240,8 @@
                         </div>
                         <span class="project-category">System Design Analysis</span>
                         <h3 class="project-title">Red Dead Redemption 2</h3>
-                        <p class="project-description">Deconstructing immersion, diegetic interface, and environmental narrative systems.</p>
+                        <p class="project-description">Deconstructing immersion, diegetic interface, and environmental
+                            narrative systems.</p>
                         <div class="project-tech">
                             <span class="tech-tag">UX Analysis</span>
                             <span class="tech-tag">Interaction Design</span>
@@ -231,7 +252,8 @@
                                 <span>View Project</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
-                            <a href="https://rdr2-portfolio-site.vercel.app/" class="live-site-link" target="_blank" rel="noopener noreferrer">
+                            <a href="https://rdr2-portfolio-site.vercel.app/" class="live-site-link" target="_blank"
+                                rel="noopener noreferrer">
                                 <span>Live Site</span>
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
@@ -243,11 +265,13 @@
                                 <div class="pillar-card pillar-card--data">
                                     <div class="pillar-header">Critical Friction</div>
                                     <div class="pillar-metric">50%</div>
-                                    <div class="pillar-detail">Users cite linear mission design as the primary barrier to immersion.</div>
+                                    <div class="pillar-detail">Users cite linear mission design as the primary barrier
+                                        to immersion.</div>
                                 </div>
                                 <div class="tilt-overlay tilt-overlay--rdr2">
                                     <h4>Critical Friction</h4>
-                                    <p>Half of surveyed players identified rigid mission structure as the #1 immersion breaker — a core UX problem driving the redesign.</p>
+                                    <p>Half of surveyed players identified rigid mission structure as the #1 immersion
+                                        breaker — a core UX problem driving the redesign.</p>
                                 </div>
                             </div>
                         </div>
@@ -259,20 +283,26 @@
                                     <div class="bar-group">
                                         <div class="bar-row">
                                             <span class="bar-label">Narrative</span>
-                                            <div class="bar-track"><div class="bar-fill" style="width: 90%;"></div></div>
+                                            <div class="bar-track">
+                                                <div class="bar-fill" style="width: 90%;"></div>
+                                            </div>
                                             <span class="bar-value">90%</span>
                                         </div>
                                         <div class="bar-row">
                                             <span class="bar-label">Interface</span>
-                                            <div class="bar-track"><div class="bar-fill bar-fill--low" style="width: 30%;"></div></div>
+                                            <div class="bar-track">
+                                                <div class="bar-fill bar-fill--low" style="width: 30%;"></div>
+                                            </div>
                                             <span class="bar-value">30%</span>
                                         </div>
                                     </div>
-                                    <div class="pillar-detail">High narrative satisfaction vs. low interface efficiency.</div>
+                                    <div class="pillar-detail">High narrative satisfaction vs. low interface efficiency.
+                                    </div>
                                 </div>
                                 <div class="tilt-overlay tilt-overlay--rdr2">
                                     <h4>Interaction Variance</h4>
-                                    <p>A 60-point gap between narrative and interface satisfaction reveals the core design tension — great story, clunky systems.</p>
+                                    <p>A 60-point gap between narrative and interface satisfaction reveals the core
+                                        design tension — great story, clunky systems.</p>
                                 </div>
                             </div>
                         </div>
@@ -289,7 +319,8 @@
                                 </div>
                                 <div class="tilt-overlay tilt-overlay--rdr2">
                                     <h4>System Directives</h4>
-                                    <p>Three targeted interventions addressing inventory, interface, and narrative — each backed by user research data.</p>
+                                    <p>Three targeted interventions addressing inventory, interface, and narrative —
+                                        each backed by user research data.</p>
                                 </div>
                             </div>
                         </div>
@@ -324,7 +355,8 @@
                                 <span>View Project</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
-                            <a href="https://bearded-threads-portfolio.vercel.app/" class="live-site-link" target="_blank" rel="noopener noreferrer">
+                            <a href="https://bearded-threads-portfolio.vercel.app/" class="live-site-link"
+                                target="_blank" rel="noopener noreferrer">
                                 <span>Live Site</span>
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
@@ -341,7 +373,8 @@
                                 <span class="tilt-card-label">Identity System</span>
                                 <div class="tilt-overlay">
                                     <h4>Identity System</h4>
-                                    <p>Logo system and color hierarchy built for consistent cross-platform brand recognition.</p>
+                                    <p>Logo system and color hierarchy built for consistent cross-platform brand
+                                        recognition.</p>
                                 </div>
                             </div>
                         </div>
@@ -406,7 +439,8 @@
                                 <span>View Project</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
-                            <a href="https://dj-big-cali-website.vercel.app/" class="live-site-link" target="_blank" rel="noopener noreferrer">
+                            <a href="https://dj-big-cali-website.vercel.app/" class="live-site-link" target="_blank"
+                                rel="noopener noreferrer">
                                 <span>Live Site</span>
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
@@ -423,7 +457,8 @@
                                 <span class="tilt-card-label">UI & Layout System</span>
                                 <div class="tilt-overlay">
                                     <h4>UI & Layout System</h4>
-                                    <p>Engineered a dark-mode content hierarchy prioritizing media layering, stat highlighting, and high-contrast readability.</p>
+                                    <p>Engineered a dark-mode content hierarchy prioritizing media layering, stat
+                                        highlighting, and high-contrast readability.</p>
                                 </div>
                             </div>
                         </div>
@@ -438,7 +473,8 @@
                                 <span class="tilt-card-label">Visual Performance</span>
                                 <div class="tilt-overlay">
                                     <h4>Visual Performance</h4>
-                                    <p>Captured the high-energy club vibe using optimized motion backgrounds and dynamic GSAP scroll interactions.</p>
+                                    <p>Captured the high-energy club vibe using optimized motion backgrounds and dynamic
+                                        GSAP scroll interactions.</p>
                                 </div>
                             </div>
                         </div>
@@ -453,7 +489,8 @@
                                 <span class="tilt-card-label">Professional Identity</span>
                                 <div class="tilt-overlay">
                                     <h4>Professional Identity</h4>
-                                    <p>Elevated the brand to target premium wedding and corporate clients through a sophisticated, cinematic aesthetic.</p>
+                                    <p>Elevated the brand to target premium wedding and corporate clients through a
+                                        sophisticated, cinematic aesthetic.</p>
                                 </div>
                             </div>
                         </div>
@@ -463,7 +500,8 @@
 
             <!-- TripleTen Capstone -->
             <section class="project-section project-section--fullscreen gs-reveal" data-project="tripleten">
-                <video class="project-bg-video project-bg-video--fullscreen" loop muted playsinline preload="metadata" aria-hidden="true">
+                <video class="project-bg-video project-bg-video--fullscreen" loop muted playsinline preload="metadata"
+                    aria-hidden="true">
                     <source src="coco-gradient.mp4" type="video/mp4">
                 </video>
                 <div class="project-content-grid project-content-grid--fullscreen">
@@ -475,7 +513,9 @@
                         </div>
                         <span class="project-category">UX/UI Design</span>
                         <h3 class="project-title">CocoCoin — TripleTen Capstone</h3>
-                        <p class="project-description">Mobile banking app redesign focused on financial wellness. Built with competitive analysis, journey mapping, and high-fidelity prototypes validated through usability walkthroughs.</p>
+                        <p class="project-description">Mobile banking app redesign focused on financial wellness. Built
+                            with competitive analysis, journey mapping, and high-fidelity prototypes validated through
+                            usability walkthroughs.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Figma</span>
                             <span class="tech-tag">User Research</span>
@@ -492,13 +532,13 @@
                             <div class="tilt-card-inner">
                                 <div class="tilt-card-image">
                                     <img class="tilt-card-img" src="images/coco-pillar-logic.jpg"
-                                        alt="CocoCoin user flow and logic diagram"
-                                        loading="lazy">
+                                        alt="CocoCoin user flow and logic diagram" loading="lazy">
                                 </div>
                                 <span class="tilt-card-label">UX Logic & Flow</span>
                                 <div class="tilt-overlay">
                                     <h4>UX Logic & Flow</h4>
-                                    <p>Mapped comprehensive user journeys and edge cases to ensure frictionless navigation and financial data accessibility.</p>
+                                    <p>Mapped comprehensive user journeys and edge cases to ensure frictionless
+                                        navigation and financial data accessibility.</p>
                                 </div>
                             </div>
                         </div>
@@ -513,7 +553,8 @@
                                 <span class="tilt-card-label">Design System</span>
                                 <div class="tilt-overlay">
                                     <h4>Design System</h4>
-                                    <p>Architected a scalable, component-based design system optimized for accessibility and seamless developer handoff.</p>
+                                    <p>Architected a scalable, component-based design system optimized for accessibility
+                                        and seamless developer handoff.</p>
                                 </div>
                             </div>
                         </div>
@@ -528,7 +569,8 @@
                                 <span class="tilt-card-label">Cross-Platform UI</span>
                                 <div class="tilt-overlay">
                                     <h4>Cross-Platform UI</h4>
-                                    <p>Translated the mobile-first wallet experience into a robust, widescreen desktop dashboard environment.</p>
+                                    <p>Translated the mobile-first wallet experience into a robust, widescreen desktop
+                                        dashboard environment.</p>
                                 </div>
                             </div>
                         </div>
@@ -800,6 +842,123 @@
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Preloader Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Skip preloader if arriving via hash (e.g., "Back to Projects" from case study)
+            if (window.location.hash) {
+                const preloader = document.getElementById('bm-preloader');
+                if (preloader) preloader.style.display = 'none';
+                document.body.style.overflowY = 'auto';
+
+                // Show all hero elements immediately
+                gsap.set('.hero .gs-reveal, .staggered-menu-header', {
+                    opacity: 1, y: 0, visibility: 'visible'
+                });
+
+                setTimeout(() => {
+                    const target = document.querySelector(window.location.hash);
+                    if (target) target.scrollIntoView({ behavior: 'auto' });
+                    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+                }, 100);
+
+                return;
+            }
+
+            // Lock scroll during preloader
+            document.body.style.overflow = 'hidden';
+
+            // 1. Generate Vertical Blinds
+            const numBlinds = 5;
+            const blindsContainer = document.getElementById('blinds-container');
+            for (let i = 0; i < numBlinds; i++) {
+                let blind = document.createElement('div');
+                blind.className = 'loader-blind';
+                blind.style.width = `${100 / numBlinds}vw`;
+                blind.style.left = `${(100 / numBlinds) * i}vw`;
+                blindsContainer.appendChild(blind);
+            }
+
+            // 2. Initialize Lottie
+            const lottieAnim = lottie.loadAnimation({
+                container: document.getElementById('lottieLogo'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'https://assets3.lottiefiles.com/packages/lf20_w51pcehl.json'
+            });
+
+            // 3. Scramble Text Logic
+            const chars = '!<>-_\\/[]{}—=+*^?#_';
+            const targetStrings = ["ESTABLISHING_CONNECTION", "COMPILING_ASSETS", "RENDERING_DOM", "SYSTEM_READY"];
+            let scrambleInterval;
+            const scrambleTextEl = document.getElementById('scrambleText');
+
+            function scrambleText(targetWord) {
+                let frame = 0;
+                let currentStr = "";
+                clearInterval(scrambleInterval);
+                scrambleInterval = setInterval(() => {
+                    currentStr = "";
+                    for (let i = 0; i < targetWord.length; i++) {
+                        if (frame > i * 3) { currentStr += targetWord[i]; }
+                        else { currentStr += chars[Math.floor(Math.random() * chars.length)]; }
+                    }
+                    scrambleTextEl.innerText = currentStr;
+                    frame++;
+                    if (frame > targetWord.length * 3) clearInterval(scrambleInterval);
+                }, 30);
+            }
+
+            // 4. GSAP Master Timeline
+            const masterTl = gsap.timeline({
+                onComplete: () => {
+                    document.getElementById('bm-preloader').style.display = 'none';
+                    document.body.style.overflowY = 'auto';
+
+                    // Trigger hero reveal — play the heroTL built in script.js
+                    gsap.fromTo('.staggered-menu-header',
+                        { opacity: 0, y: -20 },
+                        { opacity: 1, y: 0, duration: 0.6, delay: 0.1 }
+                    );
+                    if (window.heroTL) {
+                        window.heroTL.play();
+                    }
+
+                    // Refresh ScrollTrigger after preloader is gone
+                    if (typeof ScrollTrigger !== 'undefined') {
+                        ScrollTrigger.refresh();
+                    }
+                }
+            });
+
+            const loadingState = { progress: 0 };
+
+            masterTl.to(loadingState, {
+                progress: 100,
+                duration: 2.8,
+                ease: "power2.inOut",
+                onUpdate: () => {
+                    document.getElementById('loaderPercentage').innerText = `${Math.round(loadingState.progress)}%`;
+                    document.getElementById('progressLine').style.width = `${loadingState.progress}%`;
+
+                    const p = Math.round(loadingState.progress);
+                    if (p === 10) scrambleText(targetStrings[0]);
+                    if (p === 40) scrambleText(targetStrings[1]);
+                    if (p === 70) scrambleText(targetStrings[2]);
+                    if (p === 95) scrambleText(targetStrings[3]);
+                }
+            }, 0)
+                .to(".loader-bottom-data, .lottie-container", {
+                    y: -30, opacity: 0, duration: 0.6, ease: "power2.in", stagger: 0.1
+                })
+                .to(".loader-blind", {
+                    scaleY: 0, duration: 1, ease: "power4.inOut", stagger: 0.1, transformOrigin: "top"
+                });
+        });
+    </script>
+
     <script src="script.js"></script>
 </body>
 
