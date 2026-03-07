@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon Michelson | UX/UI Designer & Frontend Developer</title>
+    <meta name="description"
+        content="Brandon Michelson is a UX/UI Designer and Frontend Developer creating memorable digital experiences with modern tech, GSAP animations, and thoughtful design.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Brandon Michelson | UX/UI Designer & Frontend Developer">
+    <meta property="og:description"
+        content="Creating memorable digital experiences with modern tech and thoughtful design.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Brandon Michelson | UX/UI Designer & Frontend Developer">
+    <meta name="twitter:description"
+        content="Creating memorable digital experiences with modern tech and thoughtful design.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://brandonmichelson.com">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Preload RDR2 poster image for instant display -->
+    <link rel="preload" href="images/RRD2-Still.png" as="image" type="image/png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Brandon Michelson",
+        "jobTitle": "UX/UI Designer & Frontend Developer",
+        "url": "https://brandonmichelson.com",
+        "email": "bmichelson56@gmail.com",
+        "sameAs": [
+            "https://linkedin.com/in/brandon-michelson",
+            "https://github.com/brandonmichelson"
+        ],
+        "knowsAbout": ["UX Design", "UI Design", "Frontend Development", "React", "GSAP", "JavaScript"]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Staggered Menu Navigation -->
+    <div class="staggered-menu-wrapper fixed-wrapper" id="staggeredMenu" data-position="right">
+        <!-- Pre-animation layers (color panels that slide before menu) -->
+        <div class="sm-prelayers" aria-hidden="true">
+            <div class="sm-prelayer" style="background: #1a1a2e"></div>
+            <div class="sm-prelayer" style="background: #e94560"></div>
+        </div>
+
+        <!-- Header bar (logo + toggle button) — always visible -->
+        <header class="staggered-menu-header" id="siteHeader">
+            <a href="#hero" class="sm-logo" aria-label="Home">
+                <span class="sm-logo-text">BM</span>
+            </a>
+            <button class="sm-toggle" id="menuToggle" type="button"
+                aria-label="Open menu" aria-expanded="false" aria-controls="staggered-menu-panel">
+                <span class="sm-toggle-textWrap" aria-hidden="true">
+                    <span class="sm-toggle-textInner" id="toggleTextInner">
+                        <span class="sm-toggle-line">Menu</span>
+                        <span class="sm-toggle-line">Close</span>
+                    </span>
+                </span>
+                <span class="sm-icon" id="menuIcon" aria-hidden="true">
+                    <span class="sm-icon-line" id="plusH"></span>
+                    <span class="sm-icon-line sm-icon-line-v" id="plusV"></span>
+                </span>
+            </button>
+        </header>
+
+        <!-- Slide-out panel -->
+        <aside id="staggered-menu-panel" class="staggered-menu-panel" aria-hidden="true">
+            <div class="sm-panel-inner">
+                <ul class="sm-panel-list" role="list" data-numbering>
+                    <li class="sm-panel-itemWrap">
+                        <a class="sm-panel-item" href="#hero" data-index="1">
+                            <span class="sm-panel-itemLabel">Home</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a class="sm-panel-item" href="#projects" data-index="2">
+                            <span class="sm-panel-itemLabel">Projects</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a class="sm-panel-item" href="#skills" data-index="3">
+                            <span class="sm-panel-itemLabel">Skills</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a class="sm-panel-item" href="#about" data-index="4">
+                            <span class="sm-panel-itemLabel">About</span>
+                        </a>
+                    </li>
+                    <li class="sm-panel-itemWrap">
+                        <a class="sm-panel-item" href="#contact" data-index="5">
+                            <span class="sm-panel-itemLabel">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Robot Mascot -->
+                <div class="sm-robot-wrapper">
+                    <video id="menuRobot" class="sm-robot-video" muted playsinline preload="metadata">
+                        <source src="robot portfolio.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="sm-socials" aria-label="Social links">
+                    <h3 class="sm-socials-title">Connect</h3>
+                    <ul class="sm-socials-list" role="list">
+                        <li class="sm-socials-item">
+                            <a href="mailto:bmichelson56@gmail.com" class="sm-socials-link">Email</a>
+                        </li>
+                        <li class="sm-socials-item">
+                            <a href="https://linkedin.com/in/brandon-michelson" target="_blank" rel="noopener noreferrer" class="sm-socials-link">LinkedIn</a>
+                        </li>
+                        <li class="sm-socials-item">
+                            <a href="https://github.com/brandonmichelson" target="_blank" rel="noopener noreferrer" class="sm-socials-link">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-container">
+                <div class="hero-image-wrapper gs-reveal">
+                    <!-- Lanyard Structure -->
+                    <div class="lanyard-container" id="lanyardContainer">
+                        <div class="lanyard-string"></div>
+                        <div class="lanyard-clip">
+                            <div class="clip-top"></div>
+                            <div class="clip-ring"></div>
+                        </div>
+                        <div class="lanyard-card">
+                            <div class="lanyard-card-hole"></div>
+                            <video id="badge-video" class="badge-video" loop muted playsinline>
+                                <source src="lanyard- photo.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <p class="hero-label gs-reveal">UX/UI Designer & Frontend Developer</p>
+                    <h1 class="hero-title">
+                        <svg class="name-svg" viewBox="0 0 600 180" aria-label="Brandon Michelson">
+                            <defs>
+                                <linearGradient id="nameGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#ffffff" />
+                                    <stop offset="100%" style="stop-color:#e94560" />
+                                </linearGradient>
+                            </defs>
+                            <text class="name-text name-first" x="0" y="70">Brandon</text>
+                            <text class="name-text name-last" x="0" y="150">Michelson</text>
+                        </svg>
+                        <span class="sr-only">Brandon Michelson</span>
+                    </h1>
+                    <p class="hero-subtitle gs-reveal"><span class="glitch-text"
+                            data-text="Creating memorable digital experiences with modern tech and thoughtful design.">Creating
+                            memorable digital experiences with modern tech and thoughtful design.</span></p>
+                    <a href="#projects" class="hero-cta gs-reveal">
+                        <span>View My Work</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-indicator gs-reveal">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <div id="projects">
+            <div class="projects-header">
+                <span class="section-number gs-reveal">01</span>
+                <h2 class="section-title gs-reveal">Featured Projects</h2>
+                <p class="section-subtitle gs-reveal">A selection of recent work showcasing design and development
+                    expertise.</p>
+            </div>
+
+            <!-- RDR2 Portfolio -->
+            <section class="project-section project-section--fullscreen gs-reveal" data-project="rdr2">
+                <div class="rdr2-video-wrap">
+                    <video id="rdr2-video" class="rdr2-video" muted playsinline preload="metadata"
+                        poster="images/RRD2-Still.png">
+                        <source src="RDR2-Merged-video.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-content-grid project-content-grid--fullscreen rdr2-layout">
+                    <div class="main-project-card">
+                        <div class="main-card-image">
+                            <img class="tilt-card-img" src="images/rdr2-tilt-card.png"
+                                alt="Red Dead Redemption 2 cinematic silhouette scene">
+                        </div>
+                        <span class="project-category">System Design Analysis</span>
+                        <h3 class="project-title">Red Dead Redemption 2</h3>
+                        <p class="project-description">Deconstructing immersion, diegetic interface, and environmental narrative systems.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">UX Analysis</span>
+                            <span class="tech-tag">Interaction Design</span>
+                            <span class="tech-tag">Game Systems</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="rdr2-case-study.html" class="project-link">
+                                <span>View Project</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="https://rdr2-portfolio-site.vercel.app/" class="live-site-link" target="_blank" rel="noopener noreferrer">
+                                <span>Live Site</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tilt-cards-container">
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="pillar-card pillar-card--data">
+                                    <div class="pillar-header">Critical Friction</div>
+                                    <div class="pillar-metric">50%</div>
+                                    <div class="pillar-detail">Users cite linear mission design as the primary barrier to immersion.</div>
+                                </div>
+                                <div class="tilt-overlay tilt-overlay--rdr2">
+                                    <h4>Critical Friction</h4>
+                                    <p>Half of surveyed players identified rigid mission structure as the #1 immersion breaker — a core UX problem driving the redesign.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="pillar-card pillar-card--graph">
+                                    <div class="pillar-header">Interaction Variance</div>
+                                    <div class="bar-group">
+                                        <div class="bar-row">
+                                            <span class="bar-label">Narrative</span>
+                                            <div class="bar-track"><div class="bar-fill" style="width: 90%;"></div></div>
+                                            <span class="bar-value">90%</span>
+                                        </div>
+                                        <div class="bar-row">
+                                            <span class="bar-label">Interface</span>
+                                            <div class="bar-track"><div class="bar-fill bar-fill--low" style="width: 30%;"></div></div>
+                                            <span class="bar-value">30%</span>
+                                        </div>
+                                    </div>
+                                    <div class="pillar-detail">High narrative satisfaction vs. low interface efficiency.</div>
+                                </div>
+                                <div class="tilt-overlay tilt-overlay--rdr2">
+                                    <h4>Interaction Variance</h4>
+                                    <p>A 60-point gap between narrative and interface satisfaction reveals the core design tension — great story, clunky systems.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="pillar-card pillar-card--list">
+                                    <div class="pillar-header">System Directives</div>
+                                    <ul class="directive-list">
+                                        <li><span class="directive-tag">OPTIMIZE</span> Streamline Satchel Taxonomy</li>
+                                        <li><span class="directive-tag">IMPROVE</span> Implement Contextual HUD</li>
+                                        <li><span class="directive-tag">EXPAND</span> Branching Logic</li>
+                                    </ul>
+                                </div>
+                                <div class="tilt-overlay tilt-overlay--rdr2">
+                                    <h4>System Directives</h4>
+                                    <p>Three targeted interventions addressing inventory, interface, and narrative — each backed by user research data.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bearded Threads -->
+            <section class="project-section project-section--fullscreen gs-reveal" data-project="bearded-threads">
+                <video class="project-bg-video project-bg-video--fullscreen" loop muted playsinline preload="metadata"
+                    aria-hidden="true">
+                    <source src="BTCCintro.mp4" type="video/mp4">
+                </video>
+                <div class="project-content-grid project-content-grid--fullscreen">
+                    <div class="main-project-card">
+                        <div class="main-card-image">
+                            <img src="images/BTCC3darkgrey.png"
+                                alt="Bearded Threads dark forest road brand imagery showcasing outdoor lifestyle aesthetic"
+                                loading="lazy" width="1600" height="800">
+                        </div>
+                        <span class="project-category">Brand Identity & E-Commerce Experience</span>
+                        <h3 class="project-title">Bearded Threads</h3>
+                        <p class="project-description">A lifestyle apparel brand built on community, outdoor adventure,
+                            and clean design systems.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">E-Commerce Frontend</span>
+                            <span class="tech-tag">Brand Identity</span>
+                            <span class="tech-tag">UX/UI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="bearded-threads-case-study.html" class="project-link">
+                                <span>View Project</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="https://bearded-threads-portfolio.vercel.app/" class="live-site-link" target="_blank" rel="noopener noreferrer">
+                                <span>Live Site</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tilt-cards-container">
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="tilt-card-image">
+                                    <img class="tilt-card-img--system" src="images/brand-system.png"
+                                        alt="Bearded Threads brand identity system showing logo, typography, and color palette"
+                                        loading="lazy">
+                                </div>
+                                <span class="tilt-card-label">Identity System</span>
+                                <div class="tilt-overlay">
+                                    <h4>Identity System</h4>
+                                    <p>Logo system and color hierarchy built for consistent cross-platform brand recognition.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="tilt-card-image">
+                                    <img src="images/black-beanie-product.png"
+                                        alt="Bearded Threads black beanie clean studio product photography"
+                                        loading="lazy">
+                                </div>
+                                <span class="tilt-card-label">Product Design</span>
+                                <div class="tilt-overlay">
+                                    <h4>Product Design</h4>
+                                    <p>Studio photography and presentation designed for e-commerce conversion.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="tilt-card-image">
+                                    <img src="images/black-beanie-model1.png"
+                                        alt="Bearded Threads beanie modeled in outdoor campfire lifestyle setting"
+                                        loading="lazy">
+                                </div>
+                                <span class="tilt-card-label">Market Fit &amp; Story</span>
+                                <div class="tilt-overlay">
+                                    <h4>Market Fit & Story</h4>
+                                    <p>Lifestyle positioning that connects with the outdoor demographic.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DJ Big Cali -->
+            <section class="project-section project-section--fullscreen gs-reveal" data-project="dj-cali">
+                <video class="project-bg-video project-bg-video--fullscreen" loop muted playsinline preload="metadata"
+                    aria-hidden="true">
+                    <source src="dj-turntable.mp4" type="video/mp4">
+                </video>
+                <div class="project-content-grid project-content-grid--fullscreen">
+                    <div class="main-project-card">
+                        <div class="main-card-image">
+                            <img src="images/dj-big-cali.jpg"
+                                alt="DJ Big Cali website showing vinyl record with bear mascot and custom branding"
+                                loading="lazy" width="1600" height="800">
+                        </div>
+                        <span class="project-category">Entertainment / Music Industry</span>
+                        <h3 class="project-title">DJ Big Cali</h3>
+                        <p class="project-description">Professional DJ website featuring video backgrounds, smooth
+                            scroll animations, and custom logo intro sequence. Built for client with focus on
+                            performance and mobile optimization.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">GSAP</span>
+                            <span class="tech-tag">Lenis</span>
+                            <span class="tech-tag">Video Optimization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="dj-cali-case-study.html" class="project-link">
+                                <span>View Project</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="https://dj-big-cali-website.vercel.app/" class="live-site-link" target="_blank" rel="noopener noreferrer">
+                                <span>Live Site</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tilt-cards-container">
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="tilt-card-image">
+                                    <img class="tilt-card-img" src="images/djbc-pillar-system.png"
+                                        alt="DJ Big Cali Experience UI section showing typography and layered stats"
+                                        loading="lazy">
+                                </div>
+                                <span class="tilt-card-label">UI & Layout System</span>
+                                <div class="tilt-overlay">
+                                    <h4>UI & Layout System</h4>
+                                    <p>Engineered a dark-mode content hierarchy prioritizing media layering, stat highlighting, and high-contrast readability.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="tilt-card-image">
+                                    <img class="tilt-card-img" src="images/djbc-pillar-energy.png"
+                                        alt="DJ Big Cali turntable interface showing high energy club lighting"
+                                        loading="lazy">
+                                </div>
+                                <span class="tilt-card-label">Visual Performance</span>
+                                <div class="tilt-overlay">
+                                    <h4>Visual Performance</h4>
+                                    <p>Captured the high-energy club vibe using optimized motion backgrounds and dynamic GSAP scroll interactions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="tilt-card-image">
+                                    <img class="tilt-card-img" src="images/djbc-pillar-client.png"
+                                        alt="DJ Big Cali premium wedding client experience in low key lighting"
+                                        loading="lazy">
+                                </div>
+                                <span class="tilt-card-label">Professional Identity</span>
+                                <div class="tilt-overlay">
+                                    <h4>Professional Identity</h4>
+                                    <p>Elevated the brand to target premium wedding and corporate clients through a sophisticated, cinematic aesthetic.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TripleTen Capstone -->
+            <section class="project-section project-section--fullscreen gs-reveal" data-project="tripleten">
+                <video class="project-bg-video project-bg-video--fullscreen" loop muted playsinline preload="metadata" aria-hidden="true">
+                    <source src="coco-gradient.mp4" type="video/mp4">
+                </video>
+                <div class="project-content-grid project-content-grid--fullscreen">
+                    <div class="main-project-card">
+                        <div class="main-card-image">
+                            <img src="images/coco-main-card.jpg"
+                                alt="CocoCoin mobile banking app showing welcome screen, onboarding flow, and financial dashboard"
+                                loading="lazy">
+                        </div>
+                        <span class="project-category">UX/UI Design</span>
+                        <h3 class="project-title">CocoCoin — TripleTen Capstone</h3>
+                        <p class="project-description">Mobile banking app redesign focused on financial wellness. Built with competitive analysis, journey mapping, and high-fidelity prototypes validated through usability walkthroughs.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">User Research</span>
+                            <span class="tech-tag">Prototyping</span>
+                            <span class="tech-tag">Usability Testing</span>
+                        </div>
+                        <a href="cococoin-case-study.html" class="project-link">
+                            <span>View Project</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="tilt-cards-container">
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="tilt-card-image">
+                                    <img class="tilt-card-img" src="images/coco-pillar-logic.jpg"
+                                        alt="CocoCoin user flow and logic diagram"
+                                        loading="lazy">
+                                </div>
+                                <span class="tilt-card-label">UX Logic & Flow</span>
+                                <div class="tilt-overlay">
+                                    <h4>UX Logic & Flow</h4>
+                                    <p>Mapped comprehensive user journeys and edge cases to ensure frictionless navigation and financial data accessibility.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="tilt-card-image">
+                                    <img class="tilt-card-img" src="images/coco-pillar-system.jpg"
+                                        alt="CocoCoin design system showing typography and color palettes"
+                                        loading="lazy">
+                                </div>
+                                <span class="tilt-card-label">Design System</span>
+                                <div class="tilt-overlay">
+                                    <h4>Design System</h4>
+                                    <p>Architected a scalable, component-based design system optimized for accessibility and seamless developer handoff.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tilt-card" tabindex="0">
+                            <div class="tilt-card-inner">
+                                <div class="tilt-card-image">
+                                    <img class="tilt-card-img" src="images/coco-pillar-desktop.jpg"
+                                        alt="Desktop UI dashboard for digital wallet showing data visualization"
+                                        loading="lazy">
+                                </div>
+                                <span class="tilt-card-label">Cross-Platform UI</span>
+                                <div class="tilt-overlay">
+                                    <h4>Cross-Platform UI</h4>
+                                    <p>Translated the mobile-first wallet experience into a robust, widescreen desktop dashboard environment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="section-header">
+                <span class="section-number gs-reveal">02</span>
+                <h2 class="section-title gs-reveal">Skills & Expertise</h2>
+                <p class="section-subtitle gs-reveal">Technologies and tools I use to bring ideas to life.</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Frontend Development -->
+                <div class="skill-category gs-reveal">
+                    <h3 class="skill-category-title">
+                        <i class="fa-solid fa-code"></i>
+                        Frontend Development
+                    </h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><i class="fa-brands fa-react"></i> React</li>
+                        <li class="skill-item"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</li>
+                        <li class="skill-item"><i class="fa-brands fa-html5"></i> HTML5</li>
+                        <li class="skill-item"><i class="fa-brands fa-css3-alt"></i> CSS3</li>
+                        <li class="skill-item"><i class="fa-solid fa-wind"></i> Tailwind CSS</li>
+                        <li class="skill-item"><i class="fa-solid fa-mobile-screen"></i> Responsive Design</li>
+                    </ul>
+                </div>
+
+                <!-- Animation & Interaction -->
+                <div class="skill-category gs-reveal">
+                    <h3 class="skill-category-title">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        Animation & Interaction
+                    </h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><i class="fa-solid fa-play"></i> GSAP</li>
+                        <li class="skill-item"><i class="fa-solid fa-scroll"></i> ScrollTrigger</li>
+                        <li class="skill-item"><i class="fa-solid fa-wave-square"></i> Lenis Smooth Scroll</li>
+                        <li class="skill-item"><i class="fa-solid fa-hand-pointer"></i> Micro-interactions</li>
+                        <li class="skill-item"><i class="fa-solid fa-layer-group"></i> Parallax Effects</li>
+                    </ul>
+                </div>
+
+                <!-- Design -->
+                <div class="skill-category gs-reveal">
+                    <h3 class="skill-category-title">
+                        <i class="fa-solid fa-palette"></i>
+                        Design
+                    </h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><i class="fa-brands fa-figma"></i> Figma</li>
+                        <li class="skill-item"><i class="fa-solid fa-pen-ruler"></i> Adobe XD</li>
+                        <li class="skill-item"><i class="fa-solid fa-compass-drafting"></i> UX/UI Principles</li>
+                        <li class="skill-item"><i class="fa-solid fa-swatchbook"></i> Design Systems</li>
+                        <li class="skill-item"><i class="fa-solid fa-object-group"></i> Wireframing & Prototyping</li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Workflow -->
+                <div class="skill-category gs-reveal">
+                    <h3 class="skill-category-title">
+                        <i class="fa-solid fa-toolbox"></i>
+                        Tools & Workflow
+                    </h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><i class="fa-solid fa-robot"></i> Claude Code</li>
+                        <li class="skill-item"><i class="fa-brands fa-git-alt"></i> Git / GitHub</li>
+                        <li class="skill-item"><i class="fa-solid fa-terminal"></i> VS Code</li>
+                        <li class="skill-item"><i class="fa-brands fa-chrome"></i> Chrome DevTools</li>
+                    </ul>
+                </div>
+
+                <!-- Performance -->
+                <div class="skill-category gs-reveal">
+                    <h3 class="skill-category-title">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        Performance
+                    </h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><i class="fa-solid fa-chart-line"></i> Core Web Vitals</li>
+                        <li class="skill-item"><i class="fa-solid fa-spinner"></i> Lazy Loading</li>
+                        <li class="skill-item"><i class="fa-solid fa-image"></i> Image Optimization</li>
+                        <li class="skill-item"><i class="fa-solid fa-mobile"></i> Mobile-First Approach</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="about-container">
+                <div class="about-content">
+                    <div class="section-header">
+                        <span class="section-number gs-reveal">03</span>
+                        <h2 class="section-title gs-reveal">Designer & Developer</h2>
+                    </div>
+
+                    <div class="about-bio gs-reveal">
+                        <p>I'm a UX/UI Designer and Frontend Developer who bridges the gap between beautiful design and
+                            functional code. After completing a UX/UI bootcamp at TripleTen and drawing on 20+ years of
+                            professional experience, I now specialize in creating modern web applications with advanced
+                            animations and performance optimization.</p>
+                        <p>Based in South San Francisco, I work with agencies and direct clients to build memorable
+                            digital experiences that combine thoughtful design with technical excellence.</p>
+                    </div>
+
+                    <div class="about-process gs-reveal">
+                        <h3 class="process-title">My Process</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                                <h4>Discover</h4>
+                                <p>User research, competitive analysis, stakeholder interviews</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-icon"><i class="fa-solid fa-crosshairs"></i></div>
+                                <h4>Define</h4>
+                                <p>User personas, journey maps, problem statements</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                                <h4>Design</h4>
+                                <p>Wireframes, prototypes, user testing, iteration</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-icon"><i class="fa-solid fa-code"></i></div>
+                                <h4>Develop</h4>
+                                <p>Modern tech stack, GSAP animations, performance-first</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+                                <h4>Deploy</h4>
+                                <p>Optimization, launch, analytics, continuous improvement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-differentiators gs-reveal">
+                    <div class="differentiator">
+                        <div class="diff-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h4>AI-Augmented Development</h4>
+                        <p>Leverage Claude Code for faster iteration and cleaner code</p>
+                    </div>
+                    <div class="differentiator">
+                        <div class="diff-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h4>Performance Obsessed</h4>
+                        <p>Core Web Vitals optimization and mobile-first approach</p>
+                    </div>
+                    <div class="differentiator">
+                        <div class="diff-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+                        <h4>Full-Stack Thinking</h4>
+                        <p>Designer + Developer perspective for seamless execution</p>
+                    </div>
+                    <div class="differentiator">
+                        <div class="diff-icon"><i class="fa-solid fa-film"></i></div>
+                        <h4>Modern Animations</h4>
+                        <p>GSAP expertise for cinematic, engaging experiences</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="contact-container">
+                <div class="section-header">
+                    <span class="section-number gs-reveal">04</span>
+                    <h2 class="section-title gs-reveal">Let's Work Together</h2>
+                    <p class="section-subtitle gs-reveal">Available for freelance projects and contract opportunities.
+                    </p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info gs-reveal">
+                        <div class="availability">
+                            <span class="status-dot"></span>
+                            <span>Currently accepting new projects</span>
+                        </div>
+                        <p class="response-time">I typically respond within 24 hours</p>
+
+                        <div class="contact-links">
+                            <a href="mailto:bmichelson56@gmail.com" class="contact-link">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>bmichelson56@gmail.com</span>
+                            </a>
+                            <a href="https://linkedin.com/in/brandon-michelson" target="_blank"
+                                rel="noopener noreferrer" class="contact-link">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                                <span>/in/brandon-michelson</span>
+                            </a>
+                            <a href="https://github.com/brandonmichelson" target="_blank" rel="noopener noreferrer"
+                                class="contact-link">
+                                <i class="fa-brands fa-github"></i>
+                                <span>/brandonmichelson</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form gs-reveal" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <p class="form-note">Form is demo only — please use email for real inquiries</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">BM</span>
+                    <p>&copy; 2026 Brandon Michelson</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="mailto:bmichelson56@gmail.com" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/brandon-michelson" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/brandonmichelson" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Built with <a href="https://claude.ai/claude-code" target="_blank" rel="noopener noreferrer">Claude
+                        Code</a></p>
+            </div>
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

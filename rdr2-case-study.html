@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Dead Redemption 2 | System Design Analysis</title>
+    <meta name="description"
+        content="Case study: Deconstructing immersion, diegetic interface, and environmental narrative systems in Red Dead Redemption 2.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Red Dead Redemption 2 | System Design Analysis">
+    <meta property="og:description"
+        content="Case study: Deconstructing immersion, diegetic interface, and environmental narrative systems in Red Dead Redemption 2.">
+    <meta property="og:type" content="article">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="site-header visible" id="siteHeader">
+        <a href="index.html#hero" class="logo">BM</a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html#hero" class="nav-link">Home</a>
+            <a href="index.html#projects" class="nav-link active">Projects</a>
+            <a href="index.html#skills" class="nav-link">Skills</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <a href="index.html#hero" class="mobile-nav-link">Home</a>
+        <a href="index.html#projects" class="mobile-nav-link">Projects</a>
+        <a href="index.html#skills" class="mobile-nav-link">Skills</a>
+        <a href="index.html#about" class="mobile-nav-link">About</a>
+        <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Case Study Hero -->
+        <section class="case-study-hero" id="hero">
+            <div class="case-study-hero-bg">
+                <img src="images/rdr2-tilt-card.png" alt="RDR2 cinematic silhouette of two figures on horseback" class="case-study-hero-img">
+                <div class="case-study-hero-overlay"></div>
+            </div>
+            <div class="case-study-hero-content">
+                <span class="case-study-label">System Design Analysis</span>
+                <h1 class="case-study-title">Red Dead Redemption 2</h1>
+                <p class="case-study-intro">Deconstructing immersion, diegetic interface, and environmental narrative systems.</p>
+            </div>
+        </section>
+
+        <!-- Case Study Body -->
+        <article class="case-study-body">
+
+            <!-- Section 01: The Objective -->
+            <section class="case-study-section">
+                <div class="case-study-section-content">
+                    <span class="case-study-section-number">01</span>
+                    <h2 class="case-study-section-title">The Objective</h2>
+                    <p class="case-study-text">Red Dead Redemption 2 is a masterpiece of narrative, yet player data reveals a critical tension between its cinematic ambitions and its gameplay mechanics. This project is not a UI redesign of Rockstar's aesthetic; it is a forensic breakdown of system friction.</p>
+                    <p class="case-study-text">The goal: Understand exactly where "immersion" breaks for the player and propose system-level directives to resolve ludonarrative dissonance.</p>
+                </div>
+            </section>
+
+            <!-- Section 02: Research Protocol -->
+            <section class="case-study-section">
+                <div class="case-study-section-content">
+                    <span class="case-study-section-number">02</span>
+                    <h2 class="case-study-section-title">Research Protocol</h2>
+                    <p class="case-study-text">We conducted 10 semi-structured player interviews, mixing qualitative sentiment analysis with quantitative task success and satisfaction metrics. Pain points were categorized into four primary friction buckets based on recurring player frustrations.</p>
+                    <p class="case-study-text">Core research questions focused on: Which story moments felt least satisfying? What systems did players wish existed? How would they redesign the gang's downfall? And critically — where did the interface fight the narrative?</p>
+                </div>
+            </section>
+
+            <!-- Section 03: Key Findings -->
+            <section class="case-study-section">
+                <div class="case-study-section-content">
+                    <span class="case-study-section-number">03</span>
+                    <h2 class="case-study-section-title">Key Findings</h2>
+                    <p class="case-study-text">50% of users cited linear mission design as the primary barrier to immersion. Narrative satisfaction scored 90% while interface efficiency scored just 30% — a massive interaction variance that reveals the core tension in the experience.</p>
+                    <p class="case-study-text">The pain categories broke down clearly: Mission Freedom (50%), Clunky Menus (25%), Underused Side Characters (18%), and Visual Clutter (7%). The data pointed to a system where the story excels but the mechanics actively work against it.</p>
+                </div>
+            </section>
+
+            <!-- Section 04: Player Voice -->
+            <section class="case-study-section">
+                <div class="case-study-section-content">
+                    <span class="case-study-section-number">04</span>
+                    <h2 class="case-study-section-title">Player Voice</h2>
+                    <p class="case-study-text">Players expressed a consistent desire for agency. "I felt like I was just checking boxes. I wanted more choice in how to finish missions." The menu system drew particular frustration: "Menus were too clunky — I avoided them unless I had to."</p>
+                    <p class="case-study-text">Character investment ran deep but left players wanting more: "Sadie deserved a whole game. Her arc was powerful but way too short." And the most telling insight into player desire for narrative control: "I wish there was a leave the gang early option."</p>
+                </div>
+            </section>
+
+            <!-- Section 05: Design Directives -->
+            <section class="case-study-section">
+                <div class="case-study-section-content">
+                    <span class="case-study-section-number">05</span>
+                    <h2 class="case-study-section-title">Design Directives</h2>
+                    <p class="case-study-text">Based on the research findings, three system-level directives emerged. First: Optimize the satchel taxonomy — use iconography instead of text lists, reduce click-depth for weapon swapping, and implement Quick Access for high-frequency items.</p>
+                    <p class="case-study-text">Second: Expand mission branching logic — introduce optional paths (Stealth vs. Combat vs. Dialogue), add visual cues in the journal for Chosen Path vs. Missed Path, and let player decisions materially impact camp morale and resources. Third: Improve the contextual HUD — add a Remind Me Later feature for side missions, use subtle audio cues instead of intrusive popups, and implement color-coded map markers for Urgent vs. Passive tasks.</p>
+                </div>
+            </section>
+
+            <!-- Section 06: Results & Takeaways -->
+            <section class="case-study-section case-study-section--final">
+                <div class="case-study-section-content">
+                    <span class="case-study-section-number">06</span>
+                    <h2 class="case-study-section-title">Results & Takeaways</h2>
+                    <p class="case-study-text">This analysis reinforced a core UX principle: immersion is a system, not a feature. When narrative design and interface design are misaligned, players feel the friction — even if they can't articulate exactly why.</p>
+                    <div class="case-study-takeaways">
+                        <div class="case-study-takeaway">
+                            <div class="case-study-takeaway-icon"><i class="fa-solid fa-gamepad"></i></div>
+                            <h3>Friction is Measurable</h3>
+                            <p>Player frustration isn't subjective. Structured interviews and satisfaction metrics can quantify exactly where a system fails its users.</p>
+                        </div>
+                        <div class="case-study-takeaway">
+                            <div class="case-study-takeaway-icon"><i class="fa-solid fa-code-branch"></i></div>
+                            <h3>Agency Drives Immersion</h3>
+                            <p>Linear mechanics in an open world create cognitive dissonance. Branching systems align gameplay with the narrative promise of freedom.</p>
+                        </div>
+                        <div class="case-study-takeaway">
+                            <div class="case-study-takeaway-icon"><i class="fa-solid fa-sliders"></i></div>
+                            <h3>Interface Serves Story</h3>
+                            <p>When menus and HUD elements fight the narrative flow, they become the primary barrier to the experience the designers intended.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <!-- Back to Projects CTA -->
+        <div class="case-study-back">
+            <a href="index.html#projects" class="case-study-back-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Projects</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">BM</span>
+                    <p>© 2026 Brandon Michelson</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#skills">Skills</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="mailto:bmichelson56@gmail.com" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/brandon-michelson" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/brandonmichelson" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Built with <a href="https://claude.ai/claude-code" target="_blank" rel="noopener noreferrer">Claude
+                        Code</a></p>
+            </div>
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
