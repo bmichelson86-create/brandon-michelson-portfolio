@@ -3055,9 +3055,10 @@ h6 {
 }
 
 .pillar-header {
+    font-family: var(--font-heading);
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 2px;
     color: #888;
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -3131,23 +3132,26 @@ h6 {
 }
 
 .directive-list li {
-    font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
     color: #ddd;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
-.directive-tag {
-    color: #e94560;
-    font-weight: bold;
-    font-size: 0.7rem;
-    border: 1px solid #e94560;
-    padding: 2px 6px;
+.directive-list .directive-tag {
+    font-family: var(--font-heading);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    border: 1px solid var(--accent);
+    padding: 4px 8px;
     border-radius: 4px;
-    min-width: 70px;
+    min-width: 80px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 /* =========================================
@@ -3670,11 +3674,11 @@ h6 {
 
 .directive-tag {
     background: transparent;
-    border: 1px solid #e94560;
-    color: #e94560;
+    border: 1px solid var(--accent);
+    color: var(--accent);
     padding: 0.25rem 0.75rem;
     border-radius: 4px;
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 0.8rem;
 }
