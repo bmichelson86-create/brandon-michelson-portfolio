@@ -1226,11 +1226,15 @@ h6 {
     max-width: 600px;
     height: auto;
     overflow: visible;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .name-text {
     font-family: var(--font-heading);
     font-size: 72px;
+    text-anchor: middle;
     font-weight: 700;
     fill: transparent;
     stroke: var(--white);
@@ -2514,6 +2518,12 @@ h6 {
 
     .hero-content {
         max-width: 100%;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-subtitle {
@@ -2604,6 +2614,9 @@ h6 {
 
     .name-svg {
         max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
     }
 
     .name-text {
@@ -2666,11 +2679,14 @@ h6 {
     }
 
     .name-text {
-        font-size: 42px;
+        font-size: 54px;
     }
 
     .name-svg {
         max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
     }
 
     .project-content {
@@ -3908,4 +3924,3 @@ h6 {
         font-size: 0.95rem;
     }
 }
-
