@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    BRANDON MICHELSON - PORTFOLIO STYLES
    Premium dark theme with coral orange accents
    ============================================ */
@@ -199,10 +199,95 @@ img {
     visibility: hidden;
 }
 
-/* Hero elements visible by default (JS animates them in) */
+/* Hero elements start hidden — preloader onComplete reveals them */
 .hero .gs-reveal {
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ============================================
+   PRELOADER
+   ============================================ */
+#bm-preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+#blinds-container {
+    position: absolute;
+    inset: 0;
+}
+
+.loader-blind {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    background-color: #050505;
+    z-index: 1;
+    transform-origin: top;
+}
+
+.loader-content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.lottie-container {
+    width: 250px;
+    height: 250px;
+    max-width: 80vw;
+    max-height: 80vh;
+    position: relative;
+}
+
+.loader-bottom-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.loader-percentage {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+}
+
+.scramble-text {
+    font-family: monospace;
+    color: #8892b0;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    height: 1.2em;
+}
+
+.progress-line-container {
+    width: 200px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #e94560;
 }
 
 /* ============================================
@@ -245,10 +330,9 @@ h6 {
     margin-bottom: clamp(50px, 8vw, 80px);
 }
 
-/* REPLACED BY STAGGERED MENU
-   ============================================
-   HEADER / NAVIGATION (old)
-   ============================================
+/* ============================================
+   HEADER / NAVIGATION (legacy — used by case study pages)
+   ============================================ */
 .site-header {
     position: fixed;
     top: 0;
@@ -382,6 +466,7 @@ h6 {
 }
 
 .mobile-nav.active {
+    display: flex;
     opacity: 1;
     pointer-events: all;
 }
@@ -399,7 +484,16 @@ h6 {
     color: var(--accent);
     transform: translateX(10px);
 }
-END REPLACED BY STAGGERED MENU */
+
+/* Case study pages: show hamburger and hide desktop nav on mobile */
+@media (max-width: 768px) {
+    .site-header .nav-links {
+        display: none;
+    }
+    .site-header .menu-toggle {
+        display: flex;
+    }
+}
 
 /* =========================================
    STAGGERED MENU — Navigation System
@@ -428,7 +522,7 @@ END REPLACED BY STAGGERED MENU */
     background: transparent;
     pointer-events: none;
     z-index: 20;
-    opacity: 1;
+    opacity: 0;
     transition: background 0.4s ease, backdrop-filter 0.4s ease;
 }
 
@@ -1904,12 +1998,19 @@ END REPLACED BY STAGGERED MENU */
     margin: 0 auto;
 }
 
+@media (min-width: 1200px) {
+    .skills-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 .skill-category {
     padding: 32px;
     background: var(--dark-gray);
     border: 1px solid var(--border);
     border-radius: 16px;
     transition: all 0.4s var(--ease-out);
+    min-height: 341px;
 }
 
 .skill-category:hover {

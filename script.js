@@ -421,13 +421,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ============================================
 // HERO ANIMATIONS (homepage only)
 // ============================================
-let heroTL;
+window.heroTL = null;
 
 const heroSection = document.querySelector('.hero');
 
 if (heroSection && !prefersReducedMotion && !hasHash) {
-    heroTL = gsap.timeline({
-        delay: 0.3,
+    window.heroTL = gsap.timeline({
+        paused: true,
         defaults: { ease: 'expo.out' }
     });
 
@@ -484,7 +484,7 @@ if (heroSection && !prefersReducedMotion && !hasHash) {
         });
 
         // Enhanced drop animation with realistic physics
-        heroTL.to(lanyardContainer, {
+        window.heroTL.to(lanyardContainer, {
             opacity: 1,
             y: 0,
             duration: 0.6,
@@ -492,7 +492,7 @@ if (heroSection && !prefersReducedMotion && !hasHash) {
         });
 
         // Initial swing with spring physics simulation
-        heroTL.to(lanyardContainer, {
+        window.heroTL.to(lanyardContainer, {
             rotation: 18,
             duration: 0.4,
             ease: 'power2.out',
@@ -513,7 +513,7 @@ if (heroSection && !prefersReducedMotion && !hasHash) {
         ];
 
         swingSequence.forEach((swing, i) => {
-            heroTL.to(lanyardContainer, {
+            window.heroTL.to(lanyardContainer, {
                 rotation: swing.angle,
                 duration: swing.duration,
                 ease: 'sine.inOut',
@@ -545,7 +545,7 @@ if (heroSection && !prefersReducedMotion && !hasHash) {
         }
 
         // Store reference for drag functionality (initialized after timeline)
-        heroTL.call(() => {
+        window.heroTL.call(() => {
             initDragPhysics();
         });
 
@@ -654,7 +654,7 @@ if (heroSection && !prefersReducedMotion && !hasHash) {
         // Fallback if lanyard not found
         const heroImageWrapper = document.querySelector('.hero-image-wrapper.gs-reveal');
         if (heroImageWrapper) {
-            heroTL.fromTo(heroImageWrapper,
+            window.heroTL.fromTo(heroImageWrapper,
                 { opacity: 0, x: -80 },
                 { opacity: 1, x: 0, duration: 1.4, visibility: 'visible' }
             );
@@ -662,35 +662,35 @@ if (heroSection && !prefersReducedMotion && !hasHash) {
     }
 
     // Hero label
-    heroTL.fromTo('.hero-label.gs-reveal',
+    window.heroTL.fromTo('.hero-label.gs-reveal',
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 1, visibility: 'visible' },
         '-=1'
     );
 
     // SVG Name Drawing Animation - "Brandon"
-    heroTL.to('.name-first', {
+    window.heroTL.to('.name-first', {
         strokeDashoffset: 0,
         duration: 1.5,
         ease: 'power2.inOut'
     }, '-=0.5');
 
     // SVG Name Drawing Animation - "Michelson" (starts slightly after)
-    heroTL.to('.name-last', {
+    window.heroTL.to('.name-last', {
         strokeDashoffset: 0,
         duration: 1.8,
         ease: 'power2.inOut'
     }, '-=1.2');
 
     // Fill in "Brandon" after stroke completes
-    heroTL.to('.name-first', {
+    window.heroTL.to('.name-first', {
         fill: '#ffffff',
         duration: 0.6,
         ease: 'power2.out'
     }, '-=0.8');
 
     // Fill in "Michelson" with outline effect
-    heroTL.to('.name-last', {
+    window.heroTL.to('.name-last', {
         fill: 'transparent',
         strokeWidth: 2,
         stroke: '#ffffff',
@@ -699,27 +699,27 @@ if (heroSection && !prefersReducedMotion && !hasHash) {
     }, '-=0.4');
 
     // Hero subtitle
-    heroTL.fromTo('.hero-subtitle.gs-reveal',
+    window.heroTL.fromTo('.hero-subtitle.gs-reveal',
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 1, visibility: 'visible' },
         '-=0.3'
     );
 
     // Hero CTA
-    heroTL.fromTo('.hero-cta.gs-reveal',
+    window.heroTL.fromTo('.hero-cta.gs-reveal',
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 1, visibility: 'visible' },
         '-=0.6'
     );
 
     // Initialize text effects after subtitle and CTA are visible
-    heroTL.call(() => {
+    window.heroTL.call(() => {
         initGlitchEffect();
         initFallingText();
     });
 
     // Scroll indicator
-    heroTL.fromTo('.scroll-indicator.gs-reveal',
+    window.heroTL.fromTo('.scroll-indicator.gs-reveal',
         { opacity: 0 },
         { opacity: 1, duration: 1, visibility: 'visible' },
         '-=0.4'
@@ -731,7 +731,7 @@ if (heroSection && !prefersReducedMotion && !hasHash) {
         const lanyardStringIdle = lanyardIdle.querySelector('.lanyard-string');
 
         // Subtle idle breathing animation (after intro completes)
-        heroTL.call(() => {
+        window.heroTL.call(() => {
             // Gentle floating motion
             gsap.to(lanyardIdle, {
                 y: '+=4',
@@ -791,7 +791,7 @@ if (heroSection && !prefersReducedMotion && !hasHash) {
         }
 
         // Start wind gusts after initial animation
-        heroTL.call(() => {
+        window.heroTL.call(() => {
             setTimeout(randomWindGust, 5000);
         }, null, '+=2');
     }

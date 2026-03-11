@@ -102,3 +102,64 @@
 
 **Project State:** No SVG curtain intro. Hero section loads directly with animated text entrance (name stroke draw, label/subtitle/CTA fade in). Hash navigation shows everything instantly. Header visible by default.
 ---
+
+---
+### 2026-03-06 — Add Lottie + GSAP preloader with vertical blind reveal
+
+**Files Changed:** index.html, style.css, script.js, loading-screen.json (copied from Downloads)
+
+**What Was Done:**
+1. Copied `loading screen.json` from Downloads → `loading-screen.json` in project (renamed, no spaces)
+2. Added Lottie script (`lottie-web 5.12.2`) to `<head>` before stylesheet
+3. Added `#bm-preloader` HTML after `<body>` — contains blinds container, Lottie container, percentage counter, progress line, scramble text
+4. Added preloader CSS to style.css — `#bm-preloader` (fixed, z-index 9999), `.loader-blind` (vertical blinds), `.lottie-container`, percentage/scramble/progress styles
+5. Added preloader script (inline, DOMContentLoaded) between GSAP scripts and script.js — generates 5 vertical blinds, loads Lottie animation, runs GSAP master timeline (2.8s count + fade out + blind reveal)
+6. Changed `.hero .gs-reveal` CSS from `opacity: 1; visibility: visible` back to `opacity: 0; visibility: hidden` — preloader reveals them
+7. Changed `.staggered-menu-header` CSS from `opacity: 1` to `opacity: 0` — preloader reveals it via `gsap.fromTo`
+8. Changed `let heroTL` to `window.heroTL` in script.js for cross-script access
+9. Changed `heroTL` back to `paused: true` — preloader `onComplete` calls `window.heroTL.play()`
+10. Removed `delay: 0.3` from heroTL (preloader handles timing)
+11. Hash-skip logic in preloader: hides `#bm-preloader`, sets hero elements + header visible, scrolls to target
+
+**Mistakes Made:**
+- `replace_all` for `heroTL` → `window.heroTL` caused `window.window.heroTL` on lines already updated — caught and fixed immediately
+- Initially used `gsap.from` for header reveal but CSS `opacity: 0` meant it would animate 0→0 — switched to `gsap.fromTo`
+
+**Lesson Learned:**
+- `let heroTL` at top-level of script.js is NOT accessible from inline `<script>` blocks — must use `window.heroTL`
+- Preloader script runs in DOMContentLoaded, script.js runs synchronously at load — by the time `onComplete` fires, `window.heroTL` exists
+- `gsap.from()` animates FROM specified values TO current CSS values — if CSS is already `opacity: 0`, `gsap.from({opacity: 0})` does nothing. Use `gsap.fromTo()` instead.
+- The `.staggered-menu-wrapper` has `z-index: 9000`, preloader has `z-index: 9999` — preloader correctly covers the header
+- Lottie JSON was in Downloads, not project folder — always check Downloads if missing
+- `replace_all` can double-prefix when some lines already contain the replacement target — always verify after bulk replace
+
+**Key selectors/IDs:**
+- Preloader: `#bm-preloader`, `#blinds-container`, `#lottieLogo`, `#loaderPercentage`, `#progressLine`, `#scrambleText`
+- CSS classes: `.loader-blind`, `.loader-content`, `.lottie-container`, `.loader-bottom-data`, `.loader-percentage`, `.scramble-text`, `.progress-line-container`, `.progress-line`
+- Lottie file: `loading-screen.json` (800x800, 60fps, 241 frames)
+- Hero timeline: `window.heroTL` (paused, played by preloader onComplete)
+
+**Project State:** Full Lottie + GSAP preloader working. Fresh visits: preloader → Lottie animation + percentage + scramble text → fade out → vertical blind reveal → heroTL plays (lanyard drop, SVG name draw, label/subtitle/CTA). Hash visits: preloader skipped, everything visible immediately.
+---
+
+---
+### 2026-03-10 — Fix LinkedIn URL, skill card height, replace Adobe XD
+
+**Files Changed:** index.html, style.css
+
+**What Was Done:**
+1. Updated all LinkedIn URLs (4 instances + JSON-LD schema) from `https://linkedin.com/in/brandon-michelson` to `https://www.linkedin.com/in/brandonmichelson/` — contact section, nav socials, footer, and structured data. Also updated display text from `/in/brandon-michelson` to `/in/brandonmichelson`.
+2. Fixed Performance skill card height mismatch — added `min-height: 341px` to `.skill-category` so all 5 cards match. Added `@media (min-width: 1200px)` breakpoint with `grid-template-columns: repeat(5, 1fr)` to `.skills-grid` so all 5 cards sit in one row on desktop.
+3. Replaced "Adobe XD" with "Typography Systems" in the Design skill card. Used `fa-solid fa-font` icon to match the text/type theme.
+
+**Mistakes Made:**
+- None — executed cleanly
+
+**Lesson Learned:**
+- LinkedIn URLs appeared in 4 places: JSON-LD schema (line ~56), staggered menu socials (line ~154), contact section card (line ~765), and footer (line ~821)
+- Skills grid used `repeat(auto-fit, minmax(280px, 1fr))` which wraps the 5th card on most screens — needed explicit `repeat(5, 1fr)` at 1200px+ to force single row
+- Skill cards use `.skill-category` class (not `.skill-card`)
+- The correct LinkedIn URL format is `https://www.linkedin.com/in/brandonmichelson/` (no hyphen, with www)
+
+**Project State:** All LinkedIn links correct and clickable. All 5 skill cards same height (341px min) in single row on desktop. Design card lists Typography Systems instead of Adobe XD.
+---
