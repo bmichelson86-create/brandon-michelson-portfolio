@@ -775,7 +775,10 @@
                         </div>
                     </div>
 
-                    <form class="contact-form gs-reveal" id="contactForm">
+                    <form class="contact-form gs-reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="beeb7c90-2c71-4400-8da1-9415b5a359fa">
+                        <input type="hidden" name="subject" value="New Portfolio Inquiry">
+                        <input type="hidden" name="from_name" value="Portfolio Contact Form">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required placeholder="Your name">
@@ -793,7 +796,6 @@
                             <span>Send Message</span>
                             <i class="fa-solid fa-paper-plane"></i>
                         </button>
-                        <p class="form-note">Form is demo only — please use email for real inquiries</p>
                     </form>
                 </div>
             </div>
@@ -828,10 +830,7 @@
                     </a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>Built with <a href="https://claude.ai/claude-code" target="_blank" rel="noopener noreferrer">Claude
-                        Code</a></p>
-            </div>
+
         </div>
         <button class="back-to-top" id="backToTop" aria-label="Back to top">
             <i class="fa-solid fa-arrow-up"></i>
