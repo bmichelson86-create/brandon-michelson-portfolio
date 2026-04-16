@@ -211,4 +211,4 @@ This portfolio template is for Brandon Michelson's personal use.
 
 ---
 
-**Questions?** Contact [bmichelson56@gmail.com](mailto:bmichelson56@gmail.com)
+**Questions?** Contact [bmichelson86@gmail.com](mailto:bmichelson86@gmail.com)
